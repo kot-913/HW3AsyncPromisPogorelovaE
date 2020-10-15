@@ -3,11 +3,11 @@
 
 //MY CODE IS HERE!
 
-async function delay(ms) {
-  await new Promise((res) => setTimeout(res, ms));
-}
+// async function delay(ms) {
+//   await new Promise((res) => setTimeout(res, ms));
+// }
 
-delay(3000).then(() => alert("runs after indicted time"));
+// delay(3000).then(() => alert("runs after indicted time"));
 
 // 2.
 // ...what to write here?
@@ -56,9 +56,9 @@ delay(3000).then(() => alert("runs after indicted time"));
 // Now you need to handle getPosts() function with async/await
 // receive posts and show in console, don't forget about error handling :)
 
-// function getPosts() {
-//   return fetch("https://jsonplaceholder.typicode.com/posts");
-// }
+function getPosts() {
+  return fetch("https://jsonplaceholder.typicode.com/posts");
+}
 
 //==============================================================================================================================
 
@@ -83,6 +83,26 @@ delay(3000).then(() => alert("runs after indicted time"));
 //     })
 //     .catch((err) => console.error(err));
 // }
+
+function getPosts() {
+  return fetch("https://jsonplaceholder.typicode.com/posts");
+}
+
+async function handleGetPostsWithAsyncAwait() {
+  let posts;
+  let postsNew;
+  try {
+    posts = await getPosts();
+    postsNew = await posts.json();
+    console.log(postsNew);
+  } catch (err) {
+    console.log(err);
+  } finally {
+    console.log("Done");
+  }
+}
+
+handleGetPostsWithAsyncAwait();
 
 // handleGetPostsWithAsyncAwait().then((posts) => {
 //   console.log(posts);
