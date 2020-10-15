@@ -56,13 +56,30 @@
 // Now you need to handle getPosts() function with async/await
 // receive posts and show in console, don't forget about error handling :)
 
-function getPosts() {
-  return fetch("https://jsonplaceholder.typicode.com/posts");
-}
+// function getPosts() {
+//   return fetch("https://jsonplaceholder.typicode.com/posts");
+// }
 
 //==============================================================================================================================
 
 //MY CODE IS HERE!
+
+// function getPosts() {
+//   return fetch("https://jsonplaceholder.typicode.com/posts");
+// }
+
+// function handleGetPostsWithPromise() {
+//   let posts = getPosts();
+//   posts
+//     .then((resp) => {
+//       console.log(resp.json());
+//     })
+//     .catch((err) => console.error(err));
+// }
+
+// handleGetPostsWithPromise();
+
+//is it good something like this?++++++++++++++++++++++++++++++++++++++++++++++++++
 
 // handleGetPostsWithPromise().then((posts) => {
 //   console.log(posts);
@@ -84,25 +101,27 @@ function getPosts() {
 //     .catch((err) => console.error(err));
 // }
 
-function getPosts() {
-  return fetch("https://jsonplaceholder.typicode.com/posts");
-}
+// function getPosts() {
+//   return fetch("https://jsonplaceholder.typicode.com/posts");
+// }
 
-async function handleGetPostsWithAsyncAwait() {
-  let posts;
-  let postsNew;
-  try {
-    posts = await getPosts();
-    postsNew = await posts.json();
-    console.log(postsNew);
-  } catch (err) {
-    console.log(err);
-  } finally {
-    console.log("Done");
-  }
-}
+// async function handleGetPostsWithAsyncAwait() {
+//   let posts;
+//   let postsNew;
+//   try {
+//     posts = await getPosts();
+//     postsNew = await posts.json();
+//     console.log(postsNew);
+//   } catch (err) {
+//     console.log(err);
+//   } finally {
+//     console.log("Done");
+//   }
+// }
 
-handleGetPostsWithAsyncAwait();
+// handleGetPostsWithAsyncAwait();
+
+// is it good something like this?++++++++++++++++++++++++++++++++++++++++++++++++++
 
 // handleGetPostsWithAsyncAwait().then((posts) => {
 //   console.log(posts);
